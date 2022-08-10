@@ -5,6 +5,12 @@ import hid
 VENDOR_GIANTS = 0x340d
 PRODUCT_BEACON = 0x1710
 
+# Data packages to send to the device
+
+LEDS_ON_ROUND = [0x00, 0xFF, 0x01, 0x66, 0xC8, 0xFF, 0xAD, 0x52, 0x81, 0xD6]
+LEDS_ON_BLINK = "PLACEHOLDER"  # TODO: find the correct data for this
+LEDS_OFF = [0x00, 0xFF, 0x00, 0x00, 0x64, 0x00, 0x32, 0x9E, 0xD7, 0x0D]
+
 # Show all connected USB devices
 """
 for device_dict in hid.enumerate():
@@ -17,7 +23,6 @@ for device_dict in hid.enumerate():
 
 try:
     print("Opening the device")
-
     h = hid.device()
     h.open(VENDOR_GIANTS, PRODUCT_BEACON)
 
@@ -32,12 +37,12 @@ try:
     print("Write the data")
     # stay on
     while True:
-        h.write([0x00, 0xFF, 0x01, 0x66, 0xC8, 0xFF, 0xAD, 0x52, 0x81, 0xD6])  # Turn on the LEDs
+        h.write(LEDS_ON_ROUND)  # Turn on the LEDs
         # wait
         time.sleep(3)
 
 except KeyboardInterrupt:
-    h.write([0x00, 0xFF, 0x00, 0x00, 0x64, 0x00, 0x32, 0x9E, 0xD7, 0x0D])  # Turn off the LEDs
+    h.write(LEDS_OFF)  # Turn off the LEDs
     print("Closing the device")
     h.close()
 
