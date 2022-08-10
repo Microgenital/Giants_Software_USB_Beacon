@@ -21,6 +21,7 @@ for device_dict in hid.enumerate():
 """
 
 try:
+    # Connect to the device
     print("Opening the device")
     h = hid.device()
     h.open(VENDOR_GIANTS, PRODUCT_BEACON)
@@ -36,12 +37,12 @@ try:
     print("Write the data")
     # stay on
     while True:
-        h.write(LEDS_ON_BLINK)  # Turn on the LEDs
-        # wait
+        h.write(LEDS_ON_BLINK)  # Turn on the LEDs (Use LEDS_ON_ROUND or LEDS_ON_BLINK)
         time.sleep(3)
 
+# Turn off the LEDs when the program is interrupted
 except KeyboardInterrupt:
-    h.write(LEDS_OFF)  # Turn off the LEDs
+    h.write(LEDS_OFF)
     print("Closing the device")
     h.close()
 
