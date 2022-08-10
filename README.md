@@ -12,16 +12,20 @@ pip install -r requirements.txt
 
 ## Usage
 To make the LEDs light up in a circle use:
+
 ```python
-    while True:
-        h.write(LEDS_ON_ROUND)
+import giants_beacon
+
+Beacon = giants_beacon.GiantsBeacon()
+Beacon.device_state("round")  # can be "round", "blink" or "off"
 ```
 
-To make the LEDs blink all at once use:
-```python
-    while True:
-        h.write(LEDS_ON_BLINK)
-```
+The device_state can be "round", "blink" or "off"
+
+The Beacon will be turned off after 10 seconds automatically. If you want to let the beacon turn on permanently, 
+just send the command "device_state" every 3 seconds. If you want to turn off the beacon earlier, just send 
+device_state("off")
+
 
 ## Thanks
 Thanks to "steve228uk". His [Gist](https://gist.github.com/steve228uk/873d653f1ecec0456ea3f475b6e54f68) helped me a lot to understand whats going on.
