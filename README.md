@@ -24,7 +24,7 @@ To make the LEDs blink all at once use:
 ```
 
 ## Thanks
-Thanks to "steve228uk". His Gist helped me a lot to understand whats going on.
+Thanks to "steve228uk". His [Gist](https://gist.github.com/steve228uk/873d653f1ecec0456ea3f475b6e54f68) helped me a lot to understand whats going on.
 
 
 ## License
