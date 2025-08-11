@@ -14,9 +14,9 @@ pip install -r requirements.txt
 To make the LEDs light up in a circle use:
 
 ```python
-import giants_beacon
+from giants_beacon import GiantsBeacon
 
-Beacon = giants_beacon.GiantsBeacon()
+Beacon = GiantsBeacon()
 Beacon.device_state("round")  # can be "round", "blink" or "off"
 ```
 
