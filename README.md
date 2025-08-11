@@ -1,13 +1,20 @@
 # Giants Software USB Beacon
 
-This is a small script to control the Giants Software USB Beacon with Python.
+This is a small Python package to control the Giants Software USB Beacon.
 
 ## Installation
 
-install the requirements.txt
+Install from PyPI:
 
 ```bash
-pip install -r requirements.txt
+pip install giants-software-usb-beacon
+```
+
+To work with a local checkout using the `src/` layout, install the
+package in editable mode:
+
+```bash
+pip install -e .
 ```
 
 ## Usage
@@ -20,7 +27,8 @@ Beacon = GiantsBeacon()
 Beacon.device_state("round")  # can be "round", "blink" or "off"
 ```
 
-For a complete example of switching between modes, see [examples/basic_usage.py](examples/basic_usage.py).
+See the [examples](examples/) directory for usage samples, including
+[examples/basic_usage.py](examples/basic_usage.py).
 
 The device_state can be "round", "blink" or "off".
 
