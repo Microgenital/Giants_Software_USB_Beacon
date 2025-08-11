@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "giants-software-usb-beacon"
+version = "0.1.0"
+description = "Control the Giants Software USB Beacon"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "hidapi>=0.12.0.post2",
+]
+
+[project.scripts]
+giants-beacon = "giants_beacon.__main__:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
