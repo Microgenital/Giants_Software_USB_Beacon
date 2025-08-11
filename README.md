@@ -20,6 +20,8 @@ Beacon = GiantsBeacon()
 Beacon.device_state("round")  # can be "round", "blink" or "off"
 ```
 
+For a complete example of switching between modes, see [examples/basic_usage.py](examples/basic_usage.py).
+
 The device_state can be "round", "blink" or "off".
 
 The Beacon will be turned off after 10 seconds automatically. If you want to let the beacon turn on permanently, 
